@@ -8,7 +8,7 @@ TARGET_BOOTLOADER_BOARD_NAME := mt8163
 
 # Platform
 TARGET_BOARD_PLATFORM := mt8163
-#mt8163b
+
 # For Mediatek Boot Image Headers
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
@@ -30,7 +30,6 @@ BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x0000
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
 BOARD_USES_MTK_HARDWARE := true
-
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x1000000
