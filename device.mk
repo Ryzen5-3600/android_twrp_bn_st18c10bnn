@@ -2,7 +2,6 @@
 TARGET_PREBUILT_KERNEL := device/bn/st18c7bnn/kernel
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/fstab.mt8163:root/fstab.mt8163 \
     $(LOCAL_PATH)/recovery/init.recovery.mt8163.rc:root/init.recovery.mt8163.rc \
     $(LOCAL_PATH)/recovery/ueventd.mt8163.rc:root/ueventd.mt8163.rc 
 
