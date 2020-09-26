@@ -1,29 +1,34 @@
 #Device path
-DEVICE_PATH := device/bn/st18c7bnn
+DEVICE_PATH := device/bn/st18c10bnn
 
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := mt8163
+TARGET_BOOTLOADER_BOARD_NAME := mt8167
 
 # Platform
-TARGET_BOARD_PLATFORM := mt8163
+TARGET_BOARD_PLATFORM := mt8167
 
 # For Mediatek Boot Image Headers
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a15
-TARGET_BOARD_SUFFIX := _32
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := cortex-a53
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/bn/st18c7bnn/kernel
-BOARD_KERNEL_CMDLINE := "bootopt=64S3,32N2,32N2"
-BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --ramdisk_offset 0x05f88000 --second_offset 0x00f00000 --tags_offset 0x0df88000 --cmdline $(BOARD_KERNEL_CMDLINE)
+TARGET_PREBUILT_KERNEL := device/bn/st18c10bnn/kernel
+BOARD_KERNEL_CMDLINE := "bootopt=64S3,32N2,64N2"
+BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --ramdisk_offset 0x14f88000 --second_offset 0x00e88000 --tags_offset 0x13f88000 --cmdline $(BOARD_KERNEL_CMDLINE)
 
 
 #Mediatek flags
@@ -46,9 +51,9 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # TWRP-Specific
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_THEME := landscape_hdpi
-DEVICE_RESOLUTION := 600x1024
-DEVICE_SCREEN_WIDTH := 600
-DEVICE_SCREEN_HEIGHT := 1024
+DEVICE_RESOLUTION := 1920x1200
+DEVICE_SCREEN_WIDTH := 1200
+DEVICE_SCREEN_HEIGHT := 1920
 TARGET_INCREASES_COLDBOOT_TIMEOUT := true
 #TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_INTERNAL_STORAGE_PATH := "/data/media"
@@ -87,7 +92,7 @@ TW_EXCLUDE_TWRPAPP := true
 TW_BACKUP_DATA_MEDIA := true
 
 # Recovery.fstab
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/twrp.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 
 # Touchscreen fix
 RECOVERY_TOUCHSCREEN_FLIP_Y := true
