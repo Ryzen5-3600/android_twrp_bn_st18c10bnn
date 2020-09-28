@@ -99,6 +99,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/recovery.fstab
 
 # Touchscreen fix
 RECOVERY_TOUCHSCREEN_FLIP_Y := true
+RECOVERY_TOUCHSCREEN_FLIP_X := true
 RECOVERY_TOUCHSCREEN_SWAP_XY := true
 
 # Mount Data partition
