@@ -1,4 +1,4 @@
-Twrp device tree for BNTV460/st18c7bnn AKA Nook Tablet 7" 2018 (with Android Oreo Go)
+Twrp device tree for st18c10bnn AKA Nook Tablet 10.1
 
 
 
